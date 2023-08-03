@@ -1,8 +1,17 @@
 .box{
-    border: 2px solid purple;
+    border: 0px solid purple;
 
 }
 
 .box-col{
     border: 2px solid greenyellow;
+}
+
+.box-row{
+    border: 2px solid purple;
+    min-height: 100px;
+}
+
+.box-section{
+    height: 300px;
 }
