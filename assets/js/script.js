@@ -13,6 +13,6 @@ function changeColor( elementHTML, color){
 }
 
 function changeColorWithPromt(elementHTML){
-    const color = promt("Dime el color en inglés", "yellow");
+    const color = prompt("Dime el color en inglés", "yellow");
     changeColor(elementHTML, color);
 }
