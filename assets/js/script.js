@@ -5,9 +5,14 @@ function clickPatricio() {
 }
 
 function changeColor( elementHTML, color){
-    alert(" Que emocion, voy a cambiar mi color");
+    /* alert(" Que emocion, voy a cambiar mi color"); */
     console.log(elementHTML);
     console.log(color);
 
     elementHTML.style.color = color;
+}
+
+function changeColorWithPromt(elementHTML){
+    const color = promt("Dime el color en inglés", "yellow");
+    changeColor(elementHTML, color);
 }
