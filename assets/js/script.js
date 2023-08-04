@@ -13,6 +13,17 @@ function changeColor( elementHTML, color){
 }
 
 function changeColorWithPromt(elementHTML){
-    const color = prompt("Dime el color en inglés", "yellow");
+    const color = prompt("Dime el color al que desees:");
+    elementHTML.innerHTML = "<h3>Ahora soy <em>" + color + "</em></h3>";
     changeColor(elementHTML, color);
+}
+
+function changeAll(elementHTML){
+    alert("Se reestableceran todos los colores");
+}
+
+function changeName(){
+    const userName = prompt("Escribe tu nombre cholo", "Machete");
+    const refGretting = document.getElementById("gretting");
+    refGretting.innerHTML = `Hola ${userName}`;
 }
