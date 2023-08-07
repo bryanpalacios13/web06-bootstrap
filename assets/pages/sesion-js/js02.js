@@ -53,11 +53,27 @@ let saludo; // undefined
 const localidad = "Tlaxcala";
 
 if (localidad == "Buenos Aires"){
-    saludo = function (name){return `Holis ${name}`};
+    saludo = function (name){ return `Holis ${name}` };
 }
 else{
-    saludo = function (name){ return `Buenos días ${name}`};
+    saludo = function (name){ return `Buenos días ${name}` };
 }
 
 console.log( saludo("Sergio") );
 console.log( saludo("Bryan") );
+
+/*
+------------------Funciones autoinvocadas--------------------------
+                (selft-invoking functions)
+Funciones que se autoinvocan, se pueden definir con funciones anónimas
+
+sintaxis:
+    ( function (parámetros) {} )( argumentos );
+
+*/
+
+(function( name ) {
+    console.log(`Me llamo ${name} y me autoinvoco`);
+})("ChatGPT");
+
+
