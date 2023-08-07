@@ -135,6 +135,23 @@ console.log(Number("12a12")); // NaN
 //              si la entrada no comienxa con un valor numérico convierte NaN
 console.log(parseInt("12a12")); // 12
 console.log(parseInt("a1212")); // NaN
+console.log(parseInt("$1212".slice(1))); // 1212
 // Number también acepta booleanos 
 console.log(Number(true)); // 1
 console.log(parseInt(true)); // NaN
+
+// Conversión a booleano
+// En la conversión de boolean los siguientes valores son false:
+// "", 0, null, undefined
+console.log( "Boolean(1): " + Boolean(1) ); // true
+console.log( "Boolean(1000): " + Boolean(1000) ); // true
+console.log( "Boolean('true'): " + Boolean("true") ); // true
+console.log( "Boolean('false'): " + Boolean("false") ); // true
+console.log( "Boolean(' '): " + Boolean(" ") ); // true
+
+// Number
+// [] -> 0, [30] -> 30, [30,31] -> NaN, false -> 0, true -> 1
+// String
+// [] -> "", [12,2] -> "12,2", function(){} -> "function(){}", {} -> [object, object]
+
+console.log( String( JSON.stringify({name:"Bryan"})));
