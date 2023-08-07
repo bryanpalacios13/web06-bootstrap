@@ -123,5 +123,18 @@ const sumatoria = 10 + myAgeText;
 console.log( `La sumatoria es: ${sumatoria}` ); // 1025
 console.log( `La sumatoria es: ${10 + Number(myAgeText)}` ); // 35
 console.log( `La sumatoria es: ${10 + parseInt( myAgeText)}` ); // 35 Solo agarra la parte entera
-console.log( `La sumatoria es: ${10 + parseFloat(myAgeText)}` ); // 35 tambien convierte la aprte decimal
+console.log( `La sumatoria es: ${10 + parseFloat(myAgeText)}` ); // 35 tambien convierte la parte decimal
 console.log( `La sumatoria es: ${10 + (+myAgeText)}` ); // 35 es un operador unario
+
+// Diferencias entre usar Number() y parseInt()
+// Number convierte enteros y decimales
+// parseInt solo convierte enteros
+// Number devuelve NaN si la cadena contiene algun caractér no numérico
+console.log(Number("12a12")); // NaN
+// parseInt convierte los enteros hasta encontrar un caracter no numérico, pero
+//              si la entrada no comienxa con un valor numérico convierte NaN
+console.log(parseInt("12a12")); // 12
+console.log(parseInt("a1212")); // NaN
+// Number también acepta booleanos 
+console.log(Number(true)); // 1
+console.log(parseInt(true)); // NaN
