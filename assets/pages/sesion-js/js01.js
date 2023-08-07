@@ -78,3 +78,50 @@ const myObj = {
     [myKey]: 567,
 }
 console.log( myObj );
+
+//--------------------------------------------------------------------------------------------
+// Tipo de datos Array
+const cancionesCh30 = ["Highway Star", "Trouble", "Saoko", "Rock Dj"];
+
+// tipos de datos Object
+const misDatosPerfil = {
+    name : "Bryan",
+    lastname : "Palacios",
+    age : 22,
+    isBelicoso : false,
+    fullName : function(){
+        return `Mi nombre completo es ${this.name} ${this.lastname}`;
+        /* return "Mi nombre completo es " + this.name + " " + this.lastname; */
+    },
+    // Agregar una función que muestre el nombre completo en mayusculas
+    nameUpperCase : function(){
+        return `Mi nombre completo es ${this.name.toUpperCase()} ${this.lastname.toUpperCase()}`;
+    }
+}
+
+console.log( misDatosPerfil );
+console.table( misDatosPerfil );
+console.log( misDatosPerfil.fullName() );
+console.log( misDatosPerfil.nameUpperCase() );
+
+// ---------------------------------------------------------------------------------------------------
+// Conversion explicita de datos String()
+const horaDescanso = 13.05;
+console.log(`La hora del descanso es: ${horaDescanso} `);
+const horaDescansoTxt = String( horaDescanso );
+console.log(`La hora del descanso es: ${horaDescansoTxt} `);
+console.log("Hora de descanso " + horaDescansoTxt + " h.") // concatenación
+console.log("Hora de retorno: " + horaDescanso + .15);
+
+const colorVerde = 0x008000; // Representación decimal: 32768
+console.log(`El valor RGB del color verde es: ${colorVerde}`); // 32768
+console.log(`El valor RGB del color verde es: #${colorVerde.toString(16).padStart(6,"0")}`); // 8000
+
+// Conversión a Number
+const myAgeText = "25";
+const sumatoria = 10 + myAgeText;
+console.log( `La sumatoria es: ${sumatoria}` ); // 1025
+console.log( `La sumatoria es: ${10 + Number(myAgeText)}` ); // 35
+console.log( `La sumatoria es: ${10 + parseInt( myAgeText)}` ); // 35 Solo agarra la parte entera
+console.log( `La sumatoria es: ${10 + parseFloat(myAgeText)}` ); // 35 tambien convierte la aprte decimal
+console.log( `La sumatoria es: ${10 + (+myAgeText)}` ); // 35 es un operador unario
