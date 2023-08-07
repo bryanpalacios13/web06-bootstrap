@@ -1,0 +1,1 @@
+console.log("Sesión JS02 USO DE FUNCIONES");
