@@ -234,3 +234,16 @@ function getCoursesWithFilter( student1, student2 ){
 }
 
 console.log(`cursos en comunxpartes: ${getCoursesWithFilter( student1Courses, student2Courses )}`);
+
+
+/* ----------------- Contar la cantidad de caracteres de una frase -------------------
+"peso pluma pica papas con un pico y una pala con un pico pica papas peso pluma"
+
+Mostrar la cantidad de letras 'p'
+Usar dunciones flecha
+*/
+
+let pesoPluma = "Peso Pluma pica papas con un pico y una pala con un pico pica papas Peso Pluma";
+
+const counterCharacter = (phrase, character) => phrase.toLowerCase().split(character).length - 1;
+console.log( `Cantidad de letras "p": ${counterCharacter(pesoPluma, "p")}` );
