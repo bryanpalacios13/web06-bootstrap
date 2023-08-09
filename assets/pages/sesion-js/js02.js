@@ -310,14 +310,13 @@ ej: saludar 10 veces
 
 function saludoRecursivo( numeroSaludo ) {
     if(numeroSaludo > 1){
-        saludoRecursivo( numeroSaludo - 1)
-        console.log(1);
-        console.log(`Saludo ${numeroSaludo}`);
+        saludoRecursivo( numeroSaludo - 1);
     }
-    else{
     console.log(`Saludo ${numeroSaludo}`);
-        }
-    }
+}
 
 
-saludoRecursivo(4);
+saludoRecursivo(10);
+
+let recursivoSaludo = ( noSaludo ) => { if(noSaludo > 1) recursivoSaludo(noSaludo -1) };
+console.log(`Saludo no. ${recursivoSaludo(10)}`);
