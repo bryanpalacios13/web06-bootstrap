@@ -247,3 +247,77 @@ let pesoPluma = "Peso Pluma pica papas con un pico y una pala con un pico pica p
 
 const counterCharacter = (phrase, character) => phrase.toLowerCase().split(character).length - 1;
 console.log( `Cantidad de letras "p": ${counterCharacter(pesoPluma, "p")}` );
+
+// ----------------------- Recursividad ----------------------------
+/*
+Una función recursiva es una función que se llama a si misma durante su ejecución.
+
+Se utilizan en algoritmos y spluciones que se basan en la división y conquista 
+como cálculos matemáticos, recorrido de estructura de datos y algoritmos de busqueda
+y ordenamiento.
+
+Patrón:
+    function nombreFuncionRecursiva ( parametro ){
+        if (condicionParo){
+            return expresion;
+        }
+        else{
+            // llamada recursiva
+            nombreFuncionRecursiva( nuevoParametro );
+        }
+    }
+*/
+
+// -------------------- Calcular del factorial de un número (ciclo for) ------------------------
+
+function factorialCicloFor(numero){
+    let factorial = 1;
+    let i;
+    for(i = numero; i > 0; i--){
+        factorial = factorial * i;
+    }
+    return `El factorial del numero ${numero} es: ${factorial}`;
+}
+
+// -------------- Cálculo del facorial de un número usando recursividad -----------------
+
+console.log(factorialCicloFor(5)); // 1*2*3*4*5 = 120
+
+function factorialRecursiva(numero){
+    if(numero <= 0) return 1;
+    else {
+        console.log(`${numero}*${numero-1}`);
+        return numero * factorialRecursiva(numero - 1);
+    }
+}
+
+console.log(factorialRecursiva(5)); // 1*2*3*4*5 = 120
+
+// -------------- Saludar con recursividad -----------------
+/*
+Generar una función recursiva que muestre en consola un Saludo
+donde se indique el número de saludo deseado
+
+ej: saludar 10 veces
+
+    Saludo 1
+    Saludo 2
+    ...
+    Saludo 9
+    Saludo 10
+
+*/
+
+function saludoRecursivo( numeroSaludo ) {
+    if(numeroSaludo > 1){
+        saludoRecursivo( numeroSaludo - 1)
+        console.log(1);
+        console.log(`Saludo ${numeroSaludo}`);
+    }
+    else{
+    console.log(`Saludo ${numeroSaludo}`);
+        }
+    }
+
+
+saludoRecursivo(4);
