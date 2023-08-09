@@ -91,13 +91,13 @@ console.log(comidaFavorita); // Pozole
 const temperatura = 25;
 let mensaje = "Temperatura ideal de ";
 
-if (temperatura === 22){
+if (temperatura === 22) {
     mensaje += `${temperatura} grados centigrados`;
 }
-else if ( temperatura >= 15 && temperatura <= 21 ){
+else if (temperatura >= 15 && temperatura <= 21) {
     mensaje = `La temperatura de ${temperatura} grados centígrados es fría`;
 }
-else if ( temperatura >= 23 && temperatura <= 30 ){
+else if (temperatura >= 23 && temperatura <= 30) {
     mensaje = `La temperatura de ${temperatura} grados centígrados es calurosa`;
 }
 else {
@@ -140,7 +140,7 @@ const setVelocidadVentilador = (velocidad = 0) => {
     let mensaje;
 
     // la condición switch utiliza la comparación esctricta ( === )
-    switch ( parseInt(velocidad) ){
+    switch (parseInt(velocidad)) {
         case 0:
             mensaje = "Apagado"; break;
         case 1:
@@ -257,11 +257,11 @@ estacionesSwitch(prompt("Función Switch \nQué mes (00) quieres:",0));
 
 // ------------------------ Operador ternario --------------------------
 /*
- Es el único operador de JavaScript que tiene 3 operandos.
- Generalmente se utiliza como opción a la sentencia if-else.
+ Es el único operador de JavaScript que tiene 3 operandos.
+ Generalmente se utiliza como opción a la sentencia if-else.
 
- Sintaxis:
-  condición ? expresiónSiCondiciónEsVerdadera : expresionSiCondiciónEsFalsa; 
+ Sintaxis:
+  condición ? expresiónSiCondiciónEsVerdadera : expresionSiCondiciónEsFalsa; 
 
 */
 const pagoTarjetaCredito = true
@@ -278,12 +278,31 @@ console.log(`El usuario ${msj}`);
 
 // --------------- mini ejercicio  ----------------------------
 /*
- Preguntar con prompt la edad del usuario: 20
- Si es >= 18 indicar en la consola "El usuario es mayor de edad";
- Si no cumple con la condición "El usuario no es mayor de edad".
+ Preguntar con prompt la edad del usuario: 20
+ Si es >= 18 indicar en la consola "El usuario es mayor de edad";
+ Si no cumple con la condición "El usuario no es mayor de edad".
 */
 
-let age = parseInt(prompt("Cual es tu edad:"));
+// let age = parseInt(prompt("Cual es tu edad:"));
 // const mayorEdad = age >= 18 ? "El usuario es mayor de edad" : "El usuario no es mayor de edad";
 // console.log(mayorEdad);
-alert(age >= 18 ? "El usuario es mayor de edad" : "El usuario no es mayor de edad");
+// alert(age >= 18 ? "El usuario es mayor de edad" : "El usuario no es mayor de edad");
+
+// ---------Cálculo de factorial de un número usando recursividad y operador ternario---------
+
+/* function factorialConRecursividad(numero) {
+    if (numero <= 0) {
+        return 1;
+    } else {
+        console.log(`${ numero } * ${ numero- 1}`);
+        return numero * factorialConRecursividad(numero - 1);
+    }
+}
+
+console.log(`El factorial recursivo de 5 es: ${factorialConRecursividad(5)}`); */
+
+function factorialRecursividadTernario(numero) {
+    return numero <= 0 ? 1 : numero * factorialRecursividadTernario(numero - 1);
+}
+
+console.log(`El factorial de 5 es: ${factorialRecursividadTernario(5)}`);
