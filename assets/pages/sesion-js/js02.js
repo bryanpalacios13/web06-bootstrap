@@ -317,6 +317,3 @@ function saludoRecursivo( numeroSaludo ) {
 
 
 saludoRecursivo(10);
-
-let recursivoSaludo = ( noSaludo ) => { if(noSaludo > 1) recursivoSaludo(noSaludo -1) };
-console.log(`Saludo no. ${recursivoSaludo(10)}`);
