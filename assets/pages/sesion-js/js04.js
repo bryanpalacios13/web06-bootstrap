@@ -17,5 +17,13 @@ console.log(`Integrantes de BugBusters: ${personasEnCh30[2].join(", ")}`); // Lu
 console.log(`BugBusters integrante n.2: ${personasEnCh30[2][0]}`);
 
 // personasEnCh30[1][3] = "Bryan";
-personasEnCh30[1].splice(3, 0, "Bryan");
+personasEnCh30[1].splice(3, "Bryan");
 console.table(personasEnCh30);
+
+// ------------- Iterando todos los elementos
+
+for (let equipo = 0; equipo < personasEnCh30.length /*filas*/; equipo++) {
+    for (let persona = 0; persona <  personasEnCh30[ equipo ].length; persona++) {
+        console.log( personasEnCh30[ equipo ][ persona ] );        
+    }    
+}
