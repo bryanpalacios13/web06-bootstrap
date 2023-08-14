@@ -125,6 +125,81 @@ console.log(`Nombre ${personas.name}`);
 console.log(`Nombre ${personas["name"]}`);
 
 // const ocupation = personas.ocupation === undefined ? "Ingeniero software" : "Sin ocupación"; // Ingeniero software
-
 const ocupation = personas.ocupation || "Ingeniero software";
+
+// ------------------ Operador nullish Coalescing ----------------------------
+// const ocupation = personas.ocupation ?? "Ingeniero software" 
+
 console.log(`Ocupación: ${ocupation}`);
+
+// --------------------------- Comparación estrícta --------------------------------
+/*
+    === Estrictamente igual, se debe comparar el valor y el tipo de dato
+    !== Estrictamente diferente, debe ser diferente en valor y tipo
+
+*/
+
+console.log( "23" === 23 ); // false
+console.log( "true" === true ); // false
+console.log( "true" == true ); // false
+console.log( "45" !== 23 ); // true
+
+// ----------------- Operador de desestructuración (Destructuring) -----------------
+/* 
+Es una expresión en JS que hace posible extraer datos de arreglos u objetos y nos
+ayuda a realizar asignaciones más complejas.
+*/
+
+let dataA = 10;
+let dataB = 20;
+console.log(`a: ${dataA}, b: ${dataB}`); // 10, 20
+// Intercambiar los datos -> A:20 y B:10
+/* let temp = dataA;
+dataA = dataB;
+dataB = temp; */
+
+[dataA, dataB] = [dataB, dataA];
+console.log(`a: ${dataA}, b: ${dataB}`); // 10, 20
+
+const car = {
+    model : "Vento",
+    year : 2023,
+    brand : "VW",
+    color : "red",
+    price : 320_000,
+    aditionalInfo : {
+        bluetooth : true,
+        cruiseConstrol : true,
+        gps : false,
+    }
+}
+
+// console.log(`Modelo: ${car.model}`); // Vento
+// console.log(`Año: ${car.year}`);
+// const carModel = car.model;
+// const carYear = car.year;
+const{ model : carmodel , year, aditionalInfo : {bluetooth} } = car;
+
+console.log(`Modelo: ${carmodel}`); // Vento
+console.log(`Año: ${year}`); // 2023
+const desicion = car.aditionalInfo.bluetooth ? "Si" : "No";
+console.log(`Tiene bluetooth: ${desicion}`);
+
+console.log(bluetooth);
+
+// ---------------------- ejercicio -------------------------
+/*
+    Hacer una función que realice la división de 2 números y 
+    entregar (return) en entero el cociente y el residuo
+
+*/
+
+function cocienteResiduo (a,b){
+    const result = {
+        cociente : Math.floor(a/b),
+        residuo : a%b,
+    }
+    return {cociente,resuido}=result;
+}
+
+console.log( `Cociente: ${cocienteResiduo(2,7).cociente} Residuo: ${cocienteResiduo(2,7).residuo}`);
