@@ -44,7 +44,7 @@ findElementByQuerySelector();
 // appendChild
 
 const newElement = () => {
-    const newElement = document.createElement("div"); // <p></p>
+    const newElement = document.createElement ("div"); // <p></p>
     
     newElement.innerHTML = `La CH30 le gusta: 
     <ul>
@@ -56,8 +56,8 @@ const newElement = () => {
     </ul>
     `;
 
-    const descriptionCH30 =  document.querySelector("#descriptionCH30");
-    descriptionCH30.appendChild(newElement);
+    const descriptionCH30 = document.querySelector("#descriptionCH30");
+    descriptionCH30.appendChild( newElement );
 }
 
 newElement();
