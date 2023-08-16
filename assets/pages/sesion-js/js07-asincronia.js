@@ -38,7 +38,38 @@ const pasoAsincrono = (name) => {
     setTimeout ( ()=> console.log(`Hola ${name}`), 5000 );
 }
 
+/* 
+
 console.log("+++++++++++++++++++++++++++++++++++");
 primerPaso();
 pasoAsincrono("Baby Yoda multiverso");
 tercerPaso();
+
+*/
+
+// -----------------------------setInterval ---------------------------
+// Ejecuta una función de manera reiterada con un tiempo de retardo fijo
+
+const pasoConIntervalo = () =>{
+    setInterval(() => console.log("Hola " + new Date().toLocaleString() ), 3000 );
+}
+
+// primerPaso();
+// pasoConIntervalo();
+// tercerPaso();
+
+
+// ---------------------- Inciar y detener setInterval ------------------------
+
+const startInterval = document.getElementById("startInterval");
+const stopInterval = document.getElementById("stopInterval");
+const dateH2 = document.getElementById("dateH2");
+let idInterval; // la referncia del ID que nos proporciona setInterval
+
+startInterval.addEventListener("click", () => {
+    idInterval = setInterval( () => {dateH2.innerHTML = new Date().toLocaleString()}, 1000 );
+});
+
+stopInterval.addEventListener("click", () => {
+    clearInterval( idInterval );  // detener el intervalo
+});
