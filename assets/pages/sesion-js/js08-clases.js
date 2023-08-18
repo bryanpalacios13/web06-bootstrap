@@ -1,3 +1,5 @@
+import { Products, TapiocaProduct } from "./js08-product-class.js";
+
 console.log("JS08 Clases");
 
 const getProducts = async () => {
@@ -10,26 +12,6 @@ const getProducts = async () => {
     return response;
 };
 
-/**
- * Clase productos
- * El nombre de las clases se realizar con UpperCamelCase
-*/
-
-class Products {
-    // definimos atributos
-
-    // El método constructor nos ayuda a instanciar un objeto 
-    constructor(id, name) {
-        this.name = name; // creando el atributo name y le asignamos el valor de parámetro name 
-        this.id = id;
-        this.createAt = new Date().getTime();
-        // console.log(`Producto ${this.name} se creó el ${new Date().toLocaleString()}`);
-    }
-
-    lifeSpan() {
-        return new Date().getTime() - this.createAt;
-    }
-}
 
 function createProductsOfClassProducts() {
     // instanciar la clase products para crear un objeto
@@ -72,6 +54,10 @@ function onclickLifeSpan() {
 }
 
 // ==============================================================================
+const refShowProducts = document.getElementById("show-products");
+refShowProducts.addEventListener("click", ()=>{
+    showProducts();
+});
 
 async function showProducts() {
     // const products = createProductsOfClassProducts();
@@ -87,6 +73,12 @@ async function createProductsOfFakeStore(){
     return fakeProducts.map(({id, title}) => new Products(id, title) );
 }
 
+async function createProductsOfTapioca(){
+    const fakeProducts = await getProducts("/assets/json/tapioca.json");
+    return fakeProducts.map( ({serie, nombre, ingredients}) =>
+                        new TapiocaProduct (serie, nombre, ingredients) );
+}
+
 function createCardsOfProducts(products) {
 
     return products.map((product) =>{
@@ -96,6 +88,13 @@ function createCardsOfProducts(products) {
                 <h5 class="card-title">${product.name}</h5>
                 <h6 class="card-subtitle mb-2 text-body-secondary">${product.id}</h6>
                 <p class="card-text">Some title content pon uwu xd</p>
+                ${
+                    product instanceof TapiocaProduct ? 
+                    `<ol>
+                    ${product.ingredients.map( ingredient => `<li> ${ingredient}</li>` ).join("")}
+                    </ol>`
+                    : `<p>No Ingredients</p>`
+                }
                 <a href="#" class="card-link">Card link</a>
                 <a href="#" class="card-link">Another link</a>
             </div>
