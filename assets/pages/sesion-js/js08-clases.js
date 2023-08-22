@@ -100,7 +100,7 @@ function createCardsOfProducts(products) {
             </div>
         </div>
         `
-    })
+    });
 
 }
 
